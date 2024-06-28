@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="text-emerald-900 bg-emerald-50 h-screen">
+        <div class=" flex md:flex-row flex-col md:justify-around py-2 pl-3 lg:pl-0">
+          <!-- <div class="flex gap-2 self-stretch px-2 my-auto text-base leading-6">
+            <div>
+                <div>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e4afe216a315f3d226d6add125b1ce278e7914be5154db95593acfe3e34e97c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="shrink-0 aspect-[1.32] w-[42px]" alt="Milkomii Consultancy Logo" />
+                    <div class="my-auto">MILKOMII CONSULTANCY</div>
+                </div>
+                <div class="col-start-12 grid content-center pr-3">
+                    <button class="md:hidden" id="toggleNav" onclick="toggleNavigation()">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><!-- <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg> -->  
+                  <!--   </button>
+                </div>
+            </div>
+          </div> -->
+          <div class="flex flex-row justify-between pr-3">
+            <div class="grid content-center">
+                <div class='flex justify-center'>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e4afe216a315f3d226d6add125b1ce278e7914be5154db95593acfe3e34e97c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="shrink-0 aspect-[1.32] w-[42px]" alt="Milkomii Consultancy Logo" />
+                <div class="my-auto pl-2">MILKOMII CONSULTANCY</div>
+                </div>
+            </div>
+            <div class="col-start-12 grid content-center pr-3">
+              <button class="md:hidden" id="toggleNav" onclick="toggleNavigation()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>  </path>
+              </button>
+            </div>
+          </div>
+          <nav id="menu" class="hidden md:grid content-center mt-2 md:mt-0">
+            <ul class="md:flex md:flex-row flex-col gap-7">
+              <li class="mb-1 font-bold text-sm text-emerald-900hover:text-green-500">
+                <a href="#home" class="cursor-pointer">Home</a>
+              </li>
+              <li class="mb-1 font-bold text-sm text-emerald-900 hover:text-green-500">
+                <a href="#about" class="cursor-pointer">About Us</a>
+              </li>
+              <li class="mb-1 font-bold text-sm text-emerald-900 hover:text-green-500">
+                <a href='#products' class="cursor-pointer">Products</a>
+              </li>
+              <li class="mb-1 font-bold text-sm text-emerald-900 hover:text-green-500">
+                <a href="#contact" class="cursor-pointer">Contact Us</a>
+              </li>
+            </ul>
+        </nav>
+
+          <!-- <nav class="hidden md:flex md:flex-wrap gap-5 justify-between self-stretch p-3.5 text-sm font-semibold leading-6 uppercase" id="menu">
+            <a href="#" class="justify-center pt-0.5 pb-1 whitespace-nowrap border-lime-600 border-solid border-b-[3px]">Home</a>
+            <a href="#">Why choose us</a>
+            <a href="#">What we do</a>
+            <a href="#">Contact Us</a>
+          </nav> -->
+        <div class="hidden md:flex md:flex-row gap-2 mt-3 md:mt-0" id="menu2">
+            <a href="#contact" id="menu2" class="md:flex self-stretch px-5 py-3 my-auto text-xs leading-5 text-center rounded-lg border border-emerald-900 hover:text-white hover:bg-emerald-900 border-solid">CONTACT US</a>
+        </div>
+          
+        </div>
+
+        <section class="grid content-center w-full h-full">
+            <div class="flex flex-col lg:flex-row w-full">
+              <div class="flex justify-center lg:w-2/5 w-full">
+                <div class="flex flex-col">
+                    <div class="flex flex-col justify-center self-stretch my-auto text-center max-w-[720px] max-md:mt-10">
+                        <h1 class="text-4xl font-black tracking-tighter text-emerald-900 leading-[78px] text-ellipsis  md:text-3xl max-md:leading-10">
+                          Unlock Your Future with Expert Guidance
+                        </h1>
+                        <p class="mt-4 text-1xl leading-8 text-emerald-600 max-md:max-w-full">
+                          Providing top-notch educational consultancy services.
+                        </p>
+                        <a href="#learn-more" class="justify-center items-center self-center px-6 py-4 mt-10 max-w-full text-lg leading-7 text-emerald-50 bg-lime-600 rounded-lg w-[360px] max-md:px-5">
+                          Learn More
+                        </a>
+                    </div>
+                </div>
+              </div>
+              <div class="flex justify-center lg:w-3/5 w-full mt-3 pl-3 md:pl-0">
+                <div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/74f01e209203eff39a2bedc5ee94048265b2db740b26a6e1cb93c8e0988d760c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="grow w-full aspect-[1.61] lg:h-[420px] h-[300px]" alt="Educational consultancy services illustration" />
+                </div>
+              </div>
+            </div>
+        </section>
+        </header>
+      <main class="mt-5">
+        <section class="flex flex-col items-center px-20 pt-20 pb-12 w-full bg-emerald-50 max-md:px-5 max-md:max-w-full">
+          <div class="flex flex-col items-center px-4 max-w-full text-center text-gray-700 w-[1024px]">
+            <h2 class="text-3xl leading-[48.05px]">Why choose us…</h2>
+            <div class="shrink-0 mt-4 h-0.5 border-b-2 border-amber-500 border-solid w-[100px]"></div>
+            <p class="self-stretch mt-4 text-xl font-light leading-8 max-md:max-w-full">
+              Simple! Because we are the only educational consultants in the nation that would consult and give you admission
+              assistance 100% free of charge. We will give advice on how to conduct your studies, follow your application process
+              and make you ready for your visa application process, of which all the services are given for free for all our
+              applicants. Our mission is to give possibilities and opportunities for people who didn't even know they had them in
+              the first place
+            </p>
+          </div>
+          <div class="flex flex-col px-4 pb-8 max-w-full w-[1232px]">
+            <div class="max-md:max-w-full">
+              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center self-stretch px-px py-6 w-full bg-white rounded-md border border-solid border-neutral-200 max-md:mt-8 max-md:max-w-full">
+                    <div class="flex flex-wrap gap-0 pl-4">
+                      <div class="flex justify-center items-center self-start px-5 py-5 border-2 border-amber-500 border-solid rounded-[72px]">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0630acdda868b625630b6adff034c563bd69211a70c450edf2378e22dd3b91db?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="w-9 aspect-[1.12]" alt="Free service icon" />
+                      </div>
+                      <div class="flex flex-col flex-1 px-4 leading-6 max-md:max-w-full">
+                        <h3 class="text-sm font-extrabold text-amber-500 tracking-[2.24px] max-md:max-w-full">FREE</h3>
+                        <p class="mt-4 text-base font-light text-slate-400 max-md:max-w-full">
+                          We give free service to all our applicant students. Our
+                          consultation and admission assistance till visa application
+                          process will be given for free for all our students.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center self-stretch px-px py-6 w-full bg-white rounded-md border border-solid border-neutral-200 max-md:mt-8 max-md:max-w-full">
+                    <div class="flex flex-wrap gap-0 pl-4">
+                      <div class="flex justify-center items-center self-start px-4 py-5 border-2 border-amber-500 border-solid rounded-[72px]">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/76a5425444eeaa5c638a640f3488bcf2409265537384ae121cbc339ece9aa930?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="aspect-[1.32] w-[42px]" alt="Reliable service icon" />
+                      </div>
+                      <div class="flex flex-col flex-1 px-4 leading-6 max-md:max-w-full">
+                        <h3 class="text-sm font-extrabold text-amber-500 tracking-[2.24px] max-md:max-w-full">RELIABLE</h3>
+                        <p class="mt-4 text-base font-light text-slate-400 max-md:max-w-full">
+                          Our process and application methods make us reliable both to
+                          our students and partners. We make sure we get the best option
+                          for our students
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="mt-8 max-md:max-w-full">
+              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center self-stretch px-px py-6 w-full bg-white rounded-md border border-solid border-neutral-200 max-md:mt-8 max-md:max-w-full">
+                    <div class="flex flex-wrap gap-0 pl-4">
+                      <div class="flex justify-center items-center self-start p-5 border-2 border-amber-500 border-solid rounded-[72px]">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d85577c499de3fd691eaf6129814cd8f3b708b286214dea6d98c6dbc238567b?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="w-8 aspect-square" alt="Efficient service icon" />
+                      </div>
+                      <div class="flex flex-col flex-1 px-4 leading-6 max-md:max-w-full">
+                        <h3 class="text-sm font-extrabold text-amber-500 tracking-[2.24px] max-md:max-w-full">EFFICIENT</h3>
+                        <p class="mt-4 text-base font-light text-slate-400 max-md:max-w-full">
+                          Once you begin your process with us, we will send your
+                          application to different platforms, partners working with us, so
+                          that we would not put all our eggs in one basket.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col justify-center self-stretch px-px py-6 w-full bg-white rounded-md border border-solid border-neutral-200 max-md:mt-8 max-md:max-w-full">
+                    <div class="flex flex-wrap gap-0 pl-4">
+                      <div class="flex justify-center items-center self-start p-5 border-2 border-amber-500 border-solid rounded-[72px]">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9928559a5fb543475c860c2e543e98cb0145f713351d42af1b1961b4da70b5a4?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="w-8 aspect-square" alt="Fast service icon" />
+                      </div>
+                      <div class="flex flex-col flex-1 px-4 leading-6 max-md:max-w-full">
+                        <h3 class="text-sm font-extrabold text-amber-500 tracking-[2.24px] max-md:max-w-full">FAST</h3>
+                        <p class="mt-4 text-base font-light text-slate-400 max-md:max-w-full">
+                          As long as you take care of your end, we will commence the
+                          application and make sure you get reply with in weeks.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="flex justify-center items-center px-4 py-20 w-full bg-emerald-50 max-md:px-5 max-md:max-w-full">
+          <div class="flex flex-col items-center my-1.5 max-w-full w-[1200px]">
+            <h2 class="text-5xl font-medium text-center text-black leading-[58.5px] text-ellipsis max-md:max-w-full max-md:text-4xl">
+              What We Do
+            </h2>
+            <p class="mt-4 text-2xl leading-8 text-center text-emerald-600 max-md:max-w-full">
+              A step-by-step guide to our consultancy process.
+            </p>
+            <div class="flex-wrap justify-center content-start self-stretch px-5 mt-10 max-w-[1200px] max-md:max-w-full">
+              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <article class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea479baaf0ec589ad99755947c0da0563d9ce61f75ed45455ebcf6d7f619f0e?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[337px]" alt="Early Advantage step illustration" />
+                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 1</p>
+                    <h3 class="mt-2 text-2xl font-medium leading-10 text-black text-ellipsis">
+                      Early Advantage
+                    </h3>
+                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
+                      <strong>A long-term approach to earning that important acceptance letter.</strong>
+                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                    </p>
+                  </div>
+                </article>
+                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8c324b13c34735895326983067ef215d680f6bce2362f27e8af6a68054e98d5?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[338px]" alt="Application Year step illustration" />
+                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 2</p>
+                    <h3 class="mt-2 text-2xl leading-10 text-black text-ellipsis">Application Year</h3>
+                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
+                      <strong>A long-term approach to earning that important acceptance letter.</strong>
+                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                    </p>
+                  </div>
+                </article>
+                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cdf7d5143e62c292ad4cb781c4133e149495a99ea9cad698d792927fcdc766d?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.49] w-[336px]" alt="Final Review step illustration" />
+                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 3</p>
+                    <h3 class="mt-2 text-2xl leading-10 text-black text-ellipsis">Final Review</h3>
+                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
+                      <strong>A long-term approach to earning that important acceptance letter.</strong>
+                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="flex justify-center items-center px-4 py-12 w-full text-4xl font-black text-center bg-emerald-50 max-md:px-5 max-md:max-w-full">
+          <div class="flex flex-col p-12 max-w-full bg-green-100 w-[960px] max-md:px-5">
+            <h2 class="text-lime-600 leading-[130%] max-md:max-w-full">Our Mission</h2>
+            <p class="mt-2 leading-10 text-emerald-600 max-md:max-w-full">
+              Helping students achieve their academic and career goals through expert consultancy.
+            </p>
+          </div>
+        </section>
+      
+        <section id="contact" class="flex justify-center items-center px-4 py-20 w-full text-sm bg-emerald-50 max-md:px-5 max-md:max-w-full">
+          <div class="flex flex-col justify-center items-center py-8 my-4 max-w-full bg-white rounded-[41px] w-[1024px]">
+            <h2 class="self-stretch text-7xl font-black tracking-tighter text-center text-emerald-900 leading-[77.76px] max-md:max-w-full max-md:text-4xl">
+              Contact Us
+            </h2>
+            <p class="self-stretch mt-8 text-2xl leading-8 text-center text-emerald-900 max-md:max-w-full">
+              We are here to help you.
+            </p>
+            <form class="w-full max-w-[520px] mt-10">
+              <div class="mb-6">
+                <label for="fullName" class="block text-emerald-900 leading-[160%] mb-1">Full Name</label>
+                <input type="text" id="fullName" name="fullName" class="w-full p-4 text-emerald-600 bg-emerald-50 rounded-lg border border-emerald-200 leading-[160%]" placeholder="Enter your name" required />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-emerald-900 leading-[160%] mb-1">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full p-4 text-emerald-600 bg-emerald-50 rounded-lg border border-emerald-200 leading-[160%]" placeholder="Enter your email" required />
+              </div>
+              <div class="mb-6">
+                <div class="flex justify-between items-center mb-1">
+                  <label for="message" class="text-emerald-900 leading-6">Your Message</label>
+                  <button type="button" class="text-lime-600 leading-[160%] flex items-center">
+                    Add Files
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/97ddbdf6e8cb58900b14c583cab0dc7d8fa3981917298fe67284944137c90d0c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="ml-2 w-8 h-8" alt="Add files icon" />
+                  </button>
+                </div>
+                <textarea id="message" name="message" rows="4" class="w-full p-4 text-emerald-600 bg-emerald-50 rounded-lg border border-emerald-200 leading-[160%]" placeholder="Write your message" required></textarea>
+              </div>
+              <button type="submit" class="w-full px-6 py-4 text-center text-emerald-50 bg-lime-600 rounded-lg leading-[160%]">
+                Submit
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+      
+      <footer class="flex flex-col items-center px-5 pb-14 w-full bg-emerald-900 max-md:max-w-full">
+        <div class="flex justify-center items-center self-stretch px-16 py-20 w-full bg-emerald-900 max-md:px-5 max-md:max-w-full">
+          <div class="mt-10 mb-4 max-w-full w-[1106px]">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+              <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <address class="flex flex-col self-stretch pb-4 my-auto text-xl not-italic max-md:mt-10 max-md:max-w-full">
+                  <h3 class="font-bold text-white leading-[150%] max-md:max-w-full">Address</h3>
+                  <p class="mt-2 text-white leading-[150%] max-md:max-w-full">
+                    Meskel flower Rahmet Tower 4th floor #402
+                  </p>
+                  <div class="flex flex-wrap gap-3.5 mt-4">
+                    <a href="tel:+251115589794" class="text-amber-300 leading-[100%]">+251 115 58 97 94</a>,
+                    <a href="tel:+251116671376" class="text-amber-300 leading-[100%]">+251 116 67 13 76</a>,
+                    <a href="tel:+251116671693" class="text-amber-300 leading-[100%]">+251 116 67 16 93</a>,
+                    <a href="tel:+251942129611" class="text-amber-300 leading-[100%]">+251 942 12 96 11</a>
+                  </div>
+                </address>
+              </div>
+              <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow justify-center self-stretch w-full bg-zinc-500 max-md:mt-8 max-md:max-w-full">
+                  <div class="flex flex-col justify-center px-1.5 bg-stone-200 max-md:max-w-full">
+                    <div class="flex overflow-hidden relative flex-col gap-5 justify-between items-end pt-20 pl-1.5 w-full min-h-[400px] max-md:flex-wrap max-md:max-w-full">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/630abb80828d5798731a5270fb847f5894bc12a7731b2c1af261cb00ee40d8c3?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="object-cover absolute inset-0 size-full" alt="Map of Milkomii Consultancy location" />
+                      <div class="flex relative justify-center items-center p-0.5 mt-64 bg-white rounded border-2 border-white border-solid shadow-sm h-[42px] w-[42px] max-md:mt-10">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/520f6d692eddbfec21a5223172d53d3b1687ad6d93771927a7900d19a8ffc81c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="aspect-square w-[38px]" alt="Location pin" />
+                      </div>
+                      <div class="flex relative gap-0 mt-52 text-xs leading-4 text-black max-md:mt-10">
+                        <div class="flex flex-col self-end mt-16 max-md:mt-10">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/61122340ecf4a2af62b2c67d6f8ae9fb1f6651185fffa3ec36439bf69f1a83b1?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="self-center aspect-[2.38] w-[52px]" alt="Google Maps logo" />
+                          <div class="flex gap-0">
+                            <a href="#" class="px-1.5 bg-neutral-100">Keyboard shortcuts</a>
+                            <a href="#" class="px-1.5 bg-neutral-100">Map data ©2024 Google</a>
+                          </div>
+                        </div>
+                        <div class="flex flex-col text-right">
+                          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/74c2806955d1479b7f4bf8fc67ae130d94e7f3ea706ed263477e9b76ada257d3?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="self-end aspect-[0.53] w-[46px]" alt="Map controls" />
+                          <div class="flex gap-0 mt-1.5">
+                            <a href="#" class="px-1.5 bg-neutral-100">Terms</a>
+                            <a href="#" class="px-1.5 bg-neutral-100">Report a map error</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 mt-9 max-w-full h-0.5 border-t border-white border-solid bg-neutral-800 w-[1078px]"></div>
+        <p class="mt-4 text-xl leading-7 text-white max-md:max-w-full">
+          © Copyright 2024 Milkomii Consultancy - All Rights Reserved
+        </p>
+      </footer>
+      <script>
+        function toggleNavigation() {
+          const nav1 = document.getElementById('menu');
+          nav1.classList.toggle('hidden');
+          const nav2 = document.getElementById('menu2');
+          nav2.classList.toggle('hidden');
+        }
+      </script>
+</body>
+</html>

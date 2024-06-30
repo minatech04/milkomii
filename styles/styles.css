@@ -13,7 +13,7 @@ html{
   
   
   .footer {
-      background-color: #004658;
+      /* background-color: #004658; */
       color: #fff;
       margin-top:auto;
       width: 100%;
@@ -27,7 +27,7 @@ html{
       width: 100%;
   }
   .footer-wave-path {
-      fill: #fffff2;
+      fill: #ECFDF5;
   }
   
   
@@ -53,7 +53,7 @@ html{
   }
   
   .footer-social-amoeba-path {
-      fill: #027b9a;
+      fill: #059669;
   }
   
   .footer-social-link.instagram {
@@ -108,22 +108,22 @@ html{
   
   .footer-social-link.facebook {
       height: 34px;
-      left: 172px;
-      top: 7px;
+      left: 175px;
+      top: 11px;
       width: 34px;
   }
   
   .footer-copyright {
-      background-color: #027b9a;
+      /* background-color: #027b9a; */
       color: #fff;
-      padding: 15px 30px;
+     /*  padding: 15px 30px; */
     text-align: center;
   }
   
   .footer-copyright-wrapper {
       margin-left: auto;
       margin-right: auto;
-      max-width: 1200px;
+      max-width: 100%;
   }
   
   .footer-copyright-text {

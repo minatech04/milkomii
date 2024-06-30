@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="text-emerald-900 bg-emerald-50 h-screen">
+    <header class="text-emerald-900 bg-emerald-50 lg:h-screen">
         <div class=" flex md:flex-row flex-col md:justify-around py-2 pl-3 lg:pl-0">
           <!-- <div class="flex gap-2 self-stretch px-2 my-auto text-base leading-6">
             <div>
@@ -67,14 +67,14 @@
         </div>
 
         <section class="grid content-center w-full h-full">
-            <div class="flex flex-col lg:flex-row w-full">
+            <div class="flex flex-col-reverse lg:flex-row w-full">
               <div class="flex justify-center lg:w-2/5 w-full">
-                <div class="flex flex-col">
+                <div class="flex justify-center">
                     <div class="flex flex-col justify-center self-stretch my-auto text-center max-w-[720px] max-md:mt-10">
-                        <h1 class="text-4xl font-black tracking-tighter text-emerald-900 leading-[78px] text-ellipsis  md:text-3xl max-md:leading-10">
+                        <h1 class="md:text-5xl text-3xl font-black tracking-tighter text-emerald-900 text-ellipsis">
                           Unlock Your Future with Expert Guidance
                         </h1>
-                        <p class="mt-4 text-1xl leading-8 text-emerald-600 max-md:max-w-full">
+                        <p class="mt-4 md:text-2xl text-md px-7 md:px-0 text-emerald-600">
                           Providing top-notch educational consultancy services.
                         </p>
                         <a href="#learn-more" class="justify-center items-center self-center px-6 py-4 mt-10 max-w-full text-lg leading-7 text-emerald-50 bg-lime-600 rounded-lg w-[360px] max-md:px-5">
@@ -84,24 +84,20 @@
                 </div>
               </div>
               <div class="flex justify-center lg:w-3/5 w-full mt-3 pl-3 md:pl-0">
-                <div>
-                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/74f01e209203eff39a2bedc5ee94048265b2db740b26a6e1cb93c8e0988d760c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="grow w-full aspect-[1.61] lg:h-[420px] h-[300px]" alt="Educational consultancy services illustration" />
-                </div>
+                <div id="lottie-container" class="lg:w-[400px] lg:h-[400px] w-[300px] h-[300px]"></div>
               </div>
             </div>
         </section>
         </header>
-      <main class="mt-5">
+
+      <main class="">
         <section class="flex flex-col items-center px-20 pt-20 pb-12 w-full bg-emerald-50 max-md:px-5 max-md:max-w-full">
           <div class="flex flex-col items-center px-4 max-w-full text-center text-gray-700 w-[1024px]">
             <h2 class="text-3xl leading-[48.05px]">Why choose us…</h2>
             <div class="shrink-0 mt-4 h-0.5 border-b-2 border-amber-500 border-solid w-[100px]"></div>
-            <p class="self-stretch mt-4 text-xl font-light leading-8 max-md:max-w-full">
-              Simple! Because we are the only educational consultants in the nation that would consult and give you admission
-              assistance 100% free of charge. We will give advice on how to conduct your studies, follow your application process
-              and make you ready for your visa application process, of which all the services are given for free for all our
-              applicants. Our mission is to give possibilities and opportunities for people who didn't even know they had them in
-              the first place
+            <p class="self-stretch mt-4 text-xl font-light leading-8 max-md:max-w-full pb-4">
+              
+We are the only educational consultants in the nation offering 100% free admission assistance. We provide advice on your studies, guide you through the application process, and prepare you for your visa application—all at no cost. Our mission is to create opportunities for people who didn’t know they had them.
             </p>
           </div>
           <div class="flex flex-col px-4 pb-8 max-w-full w-[1232px]">
@@ -143,7 +139,7 @@
                 </article>
               </div>
             </div>
-            <div class="mt-8 max-md:max-w-full">
+            <div class="pt-8 max-md:max-w-full">
               <div class="flex gap-5 max-md:flex-col max-md:gap-0">
                 <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                   <div class="flex flex-col grow justify-center self-stretch px-px py-6 w-full bg-white rounded-md border border-solid border-neutral-200 max-md:mt-8 max-md:max-w-full">
@@ -171,8 +167,7 @@
                       <div class="flex flex-col flex-1 px-4 leading-6 max-md:max-w-full">
                         <h3 class="text-sm font-extrabold text-amber-500 tracking-[2.24px] max-md:max-w-full">FAST</h3>
                         <p class="mt-4 text-base font-light text-slate-400 max-md:max-w-full">
-                          As long as you take care of your end, we will commence the
-                          application and make sure you get reply with in weeks.
+                          As long as you diligently take care of your responsibilities and fulfill your part of the process, we will promptly commence the application on your behalf and ensure that you receive a reply within a matter of weeks.
                         </p>
                       </div>
                     </div>
@@ -185,47 +180,87 @@
       
         <section class="flex justify-center items-center px-4 py-20 w-full bg-emerald-50 max-md:px-5 max-md:max-w-full">
           <div class="flex flex-col items-center my-1.5 max-w-full w-[1200px]">
-            <h2 class="text-5xl font-medium text-center text-black leading-[58.5px] text-ellipsis max-md:max-w-full max-md:text-4xl">
-              What We Do
-            </h2>
+            <h2 class="text-3xl leading-[48.05px]">What We Do</h2>
+            <div class="shrink-0 mt-4 h-0.5 border-b-2 border-amber-500 border-solid w-[100px]"></div>
             <p class="mt-4 text-2xl leading-8 text-center text-emerald-600 max-md:max-w-full">
               A step-by-step guide to our consultancy process.
             </p>
-            <div class="flex-wrap justify-center content-start self-stretch px-5 mt-10 max-w-[1200px] max-md:max-w-full">
-              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
-                <article class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea479baaf0ec589ad99755947c0da0563d9ce61f75ed45455ebcf6d7f619f0e?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[337px]" alt="Early Advantage step illustration" />
-                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 1</p>
-                    <h3 class="mt-2 text-2xl font-medium leading-10 text-black text-ellipsis">
+            <div class="flex justify-center mt-5">
+              <div class="flex md:flex-row flex-col gap-5 lg:w-4/5 w-5/6">
+                <article class="flex flex-col border-slate-950 border-1 rounded-md shadow-lg pb-5">
+                  <div>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea479baaf0ec589ad99755947c0da0563d9ce61f75ed45455ebcf6d7f619f0e?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[337px] rounded-t-md" alt="Early Advantage step illustration" />
+                  </div>
+                  <div class="flex flex-col grow justify-center max-w-[360px] max-md:mt-10">
+                    
+                    <p class="mt-4 text-1xl leading-5 text-lime-600 px-4 text-center">Step 1</p>
+                    <h3 class="mt-2 text-2xl font-medium leading-10 text-center text-black text-ellipsis">
                       Early Advantage
                     </h3>
-                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
-                      <strong>A long-term approach to earning that important acceptance letter.</strong>
-                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                    <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">
+                      <strong class="block">A long-term approach to earning that important acceptance letter.</strong>
+                      At the start of high school
+                       - not in Grade 11 and certainly not in Grade 12. 
+                       Early Advantage emphasizes a holistic approach to education, specifically developing a student's
                     </p>
+                    <ol class="list-decimal pl-5">
+                      <li>Academic Achievement,</li>
+                      <li>Extracurricular Engagement, and</li>
+                      <li>Personal Qualities.</li>
+                    </ol>
+                      <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">  Our program is built on the rubric used to assess students at top universities.</p>
+                    
                   </div>
                 </article>
-                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8c324b13c34735895326983067ef215d680f6bce2362f27e8af6a68054e98d5?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[338px]" alt="Application Year step illustration" />
-                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 2</p>
-                    <h3 class="mt-2 text-2xl leading-10 text-black text-ellipsis">Application Year</h3>
-                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
-                      <strong>A long-term approach to earning that important acceptance letter.</strong>
-                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                
+                <article class="flex flex-col border-slate-950 border-1 rounded-md shadow-lg pb-5">
+                  <div>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea479baaf0ec589ad99755947c0da0563d9ce61f75ed45455ebcf6d7f619f0e?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[337px] rounded-t-md" alt="Early Advantage step illustration" />
+                  </div>
+                  <div class="flex flex-col grow justify-center max-w-[360px] max-md:mt-10">
+                    
+                    <p class="mt-4 text-1xl leading-5 text-lime-600 px-4 text-center">Step 1</p>
+                    <h3 class="mt-2 text-2xl font-medium leading-10 text-center text-black text-ellipsis">
+                      Early Advantage
+                    </h3>
+                    <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">
+                      <strong class="block">A long-term approach to earning that important acceptance letter.</strong>
+                      At the start of high school
+                       - not in Grade 11 and certainly not in Grade 12. 
+                       Early Advantage emphasizes a holistic approach to education, specifically developing a student's
                     </p>
+                    <ol class="list-decimal pl-5">
+                      <li>Academic Achievement,</li>
+                      <li>Extracurricular Engagement, and</li>
+                      <li>Personal Qualities.</li>
+                    </ol>
+                      <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">  Our program is built on the rubric used to assess students at top universities.</p>
+                    
                   </div>
                 </article>
-                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                  <div class="flex flex-col grow justify-center text-center max-w-[360px] max-md:mt-10">
-                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cdf7d5143e62c292ad4cb781c4133e149495a99ea9cad698d792927fcdc766d?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.49] w-[336px]" alt="Final Review step illustration" />
-                    <p class="mt-4 text-xs leading-5 text-lime-600">Step 3</p>
-                    <h3 class="mt-2 text-2xl leading-10 text-black text-ellipsis">Final Review</h3>
-                    <p class="mt-2 text-sm font-light leading-7 text-emerald-600 text-ellipsis">
-                      <strong>A long-term approach to earning that important acceptance letter.</strong>
-                      at the start of high school - not in Grade 11 and certainly not in Grade 12. Early Advantage emphasizes a holistic approach to education, specifically developing a student's 1) Academic Achievement, 2) Extracurricular Engagement, and 3) Personal Qualities. Our program is built on the rubric used to assess students at top universities.
+                <article class="flex flex-col border-slate-950 border-1 rounded-md shadow-lg pb-5">
+                  <div>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea479baaf0ec589ad99755947c0da0563d9ce61f75ed45455ebcf6d7f619f0e?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="max-w-full aspect-[1.52] w-[337px] rounded-t-md" alt="Early Advantage step illustration" />
+                  </div>
+                  <div class="flex flex-col grow justify-center max-w-[360px] max-md:mt-10">
+                    
+                    <p class="mt-4 text-1xl leading-5 text-lime-600 px-4 text-center">Step 1</p>
+                    <h3 class="mt-2 text-2xl font-medium leading-10 text-center text-black text-ellipsis">
+                      Early Advantage
+                    </h3>
+                    <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">
+                      <strong class="block">A long-term approach to earning that important acceptance letter.</strong>
+                      At the start of high school
+                       - not in Grade 11 and certainly not in Grade 12. 
+                       Early Advantage emphasizes a holistic approach to education, specifically developing a student's
                     </p>
+                    <ol class="list-decimal pl-5">
+                      <li>Academic Achievement,</li>
+                      <li>Extracurricular Engagement, and</li>
+                      <li>Personal Qualities.</li>
+                    </ol>
+                      <p class="mt-2 text-sm font-light leading-7 text-center text-emerald-600 text-ellipsis px-3">  Our program is built on the rubric used to assess students at top universities.</p>
+                    
                   </div>
                 </article>
               </div>
@@ -471,5 +506,9 @@
           nav2.classList.toggle('hidden');
         }
       </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    
+          <!-- Your custom JavaScript file -->
+          <script src="script.js"></script>
 </body>
 </html>

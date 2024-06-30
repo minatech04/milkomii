@@ -233,6 +233,63 @@ html{
     height: 150px;
     opacity: 1;
   }
+
+
+
+  @media screen and (max-width: 991px) {
+    .disp{
+      display: none;
+    }
+    .card{
+      background-color: transparent !important;
+      border: 0 !important;
+    }
+    .card .social-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid black;
+      height: 100%;
+      color: whitesmoke;
+      font-size: 24px;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+    
+    .card .social-link svg {
+      text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
+      transform: scale(1);
+    }
+    .card svg {
+      height: 25px;
+    }
+    
+    
+    }
+    
+    .active-bg{
+      background-color: #119dee;
+    }
+    .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #495057;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #343a40;
+      text-decoration: none;
+    }
+    
+    .nav-link.disabled {
+      color: #6c757d;
+      pointer-events: none;
+      cursor: default;
+    }
   
   
   

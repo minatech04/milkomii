@@ -1,3 +1,105 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+
+
+
+require_once "vendor/autoload.php";
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+$status = '';
+// Check if the request method is POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Retrieve the form data from the POST request
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+
+
+
+ 
+
+try {
+    //Server settings
+                      //Enable verbose debug output
+   // $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+    $mail->SMTPOptions = array(
+      'ssl' => array(
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+      'allow_self_signed' => true
+      )
+      );
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'MilkomiWeb@gmail.com';                     //SMTP username
+    $mail->Password   = 'vgwxubuqjvbszmqg';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('MilkomiWeb@gmail.com', 'Milkomi Website');
+    $mail->addAddress('milkomieducationconsultancy@gmail.com', 'Adnan');     //Add a recipient
+    //$mail->addAddress('ellen@example.com');               //Name is optional
+    //$mail->addReplyTo('info@example.com', 'Information');
+    //$mail->addCC('cc@example.com');
+    //$mail->addBCC('bcc@example.com');
+
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'A message from your website';
+    
+    $body = '
+    <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; border: none; max-width: 600px; margin: 0 auto;">
+        <tr>
+            <td style="background-color: #f4f4f4; padding: 20px;">
+                <h2 style="color: #333; margin: 0;">A message from your website</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px;">
+                <p style="margin: 0 0 10px 0;">Name: ' . $name . '</p>
+                <p style="margin: 0 0 10px 0;">Email: ' . $email . '</p>
+                <p style="margin: 0;">Message:</p>
+                <p style="margin: 0 0 20px 0;">' . $message . '</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #333; color: #fff; text-align: center; padding: 10px;">
+                <p style="margin: 0;">This message was sent from your website.</p>
+            </td>
+        </tr>
+    </table>
+    ';
+    
+    $mail->Body = $body;
+   
+
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    //echo 'Message has been sent';
+    $status = 'Message has been sent';
+    header("refresh:2");
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $status = 'Message could not be sent. Please try again later';
+    header("refresh:2");
+}
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +162,31 @@
             <a href="#">Contact Us</a>
           </nav> -->
          <div class="hidden md:flex md:flex-row gap-2 mt-3 md:mt-0" id="menu2">
-            <a href="#contact" id="menu2" class="md:flex self-stretch px-5 py-3 my-auto text-xs leading-5 text-center rounded-lg border border-emerald-900 hover:text-white hover:bg-emerald-900 border-solid">CONTACT US</a>
+           <!--  <a href="#contact" id="menu2" class="md:flex self-stretch px-5 py-3 my-auto text-xs leading-5 text-center rounded-lg border border-emerald-900 hover:text-white hover:bg-emerald-900 border-solid">CONTACT US</a> -->
+           <button class="btn-cssbuttons">
+            <span>Social Media</span><span>
+              <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024" class="icon">
+                <path fill="#ffffff" d="M767.99994 585.142857q75.995429 0 129.462857 53.394286t53.394286 129.462857-53.394286 129.462857-129.462857 53.394286-129.462857-53.394286-53.394286-129.462857q0-6.875429 1.170286-19.456l-205.677714-102.838857q-52.589714 49.152-124.562286 49.152-75.995429 0-129.462857-53.394286t-53.394286-129.462857 53.394286-129.462857 129.462857-53.394286q71.972571 0 124.562286 49.152l205.677714-102.838857q-1.170286-12.580571-1.170286-19.456 0-75.995429 53.394286-129.462857t129.462857-53.394286 129.462857 53.394286 53.394286 129.462857-53.394286 129.462857-129.462857 53.394286q-71.972571 0-124.562286-49.152l-205.677714 102.838857q1.170286 12.580571 1.170286 19.456t-1.170286 19.456l205.677714 102.838857q52.589714-49.152 124.562286-49.152z"></path>
+              </svg>
+            </span>
+            <ul>
+            <li>
+              <a  target="_blank" href=""> <svg class="" height="18" width="18" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-tiktok" viewBox="0 0 16 16">
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+              </svg></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.instagram.com/milkomi_education_consultancy?igsh=aW1jenl5YW1uN2dp">   <svg class="" height="18" width="18" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+              </svg></a>
+            </li>
+            <li>
+              <a href="" target="_blank"><svg class="" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg></a>
+            </li>
+            <li>
+            <a href="https://t.me/milkomieducationconsultancy" target="_blank"> <svg class="" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 496 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg></a></li></ul></button>
         </div>
        <!--  <div class="card d-flex flex-row">
           <span class="disp">Socials</span>
@@ -101,7 +227,7 @@
                         <p class="mt-4 md:text-2xl text-md px-7 md:px-0 text-emerald-600">
                           Providing top-notch educational consultancy services.
                         </p>
-                        <a href="#learn-more" class="justify-center items-center self-center px-6 py-4 mt-10 max-w-full text-lg leading-7 text-emerald-50 bg-lime-600 rounded-lg w-[360px] max-md:px-5">
+                        <a href="#what" class="justify-center items-center self-center px-6 py-4 mt-10 max-w-full text-lg leading-7 text-emerald-50 bg-lime-600 rounded-lg w-[360px] max-md:px-5">
                           Learn More
                         </a>
                     </div>
@@ -302,9 +428,9 @@ We are the only educational consultants in the nation offering 100% free admissi
         </section> -->
 
         <div class="row featurette about-us" id="mvc">
-          <div class="flex flex-col md:flex-row items-center justify-center">
+          <div class="flex flex-col md:flex-row items-center justify-center bg-emerald-50">
     <div class="md:w-1/2 px-4 text-center">
-      <h2 class="text-4xl font-bold mb-4 f1 text-cyan" style="color:cyan">Mission</h2>
+      <h2 class="text-4xl font-bold mb-4 f1 text-cyan" style="color:#11855e">Mission</h2>
       <div class="text-lg p1">
       Our mission is to empower our local community with access to high-quality educational resources, services, and support. We are committed to delivering exceptional customer service and conducting our business with the utmost honesty and transparency. Our goals include addressing educational gaps, fostering academic excellence, and building lasting capabilities to elevate learning standards for future generations.
       </div>
@@ -315,9 +441,9 @@ We are the only educational consultants in the nation offering 100% free admissi
   </div>
   
   
-  <div class="flex flex-col md:flex-row justify-evenly items-center">
+  <div class="flex flex-col md:flex-row justify-evenly items-center bg-emerald-50">
     <div class="md:w-1/2 md:order-2 px-4 text-center">
-      <h2 class="text-4xl font-bold mb-4 f1" style="color:cyan">Vision</h2>
+      <h2 class="text-4xl font-bold mb-4 f1" style="color:#11855e">Vision</h2>
       <div class="text-lg p1">
       Our vision is to be the premier education consultancy, empowering individuals and institutions to unlock their full potential. We aspire to redefine the landscape of education by delivering innovative, research-backed solutions that transform lives and drive sustainable progress. Through our expertise, we aim to inspire a future where every learner has the tools and support to thrive, ultimately contributing to the betterment of communities worldwide
       </div>
@@ -329,15 +455,15 @@ We are the only educational consultants in the nation offering 100% free admissi
   
   
   
-  <div class="flex flex-col md:flex-row items-center justify-center about-us">
+  <div class="flex flex-col md:flex-row items-center justify-center about-us bg-emerald-50">
     <div class="md:w-1/2 px-4 justify-center text-center">
-      <h2 class="text-4xl font-bold mb-4 f1" style="color:cyan">Core Values</h2>
+      <h2 class="text-4xl font-bold mb-4 f1" style="color:#11855e">Core Values</h2>
       <div class="text-lg p1">
       We are guided by core values of integrity, innovation, empowerment, collaboration, equity, and impact. These principles shape our work and interactions, as we strive to deliver transformative educational solutions that drive sustainable progress and positively transform the lives of learners and communities worldwide.
       </div>
     </div>
     <div class="md:w-1/2 px-4">
-      <img class="w-full max-w-md mx-auto" src="./images/core value.png" alt="Generic placeholder image">
+      <img class="w-full max-w-md mx-auto" src="./images/core values.png" alt="Generic placeholder image">
     </div>
   </div>
       
@@ -363,10 +489,10 @@ We are the only educational consultants in the nation offering 100% free admissi
         <div class="mb-6">
           <div class="flex justify-between items-center mb-1">
             <label for="message" class="text-emerald-900 leading-6">Your Message</label>
-            <button type="button" class="text-lime-600 leading-[160%] flex items-center">
+          <!--   <button type="button" class="text-lime-600 leading-[160%] flex items-center">
               Add Files
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/97ddbdf6e8cb58900b14c583cab0dc7d8fa3981917298fe67284944137c90d0c?apiKey=483b34a8932a491ba236aa99d50ad29a&" class="ml-2 w-8 h-8" alt="Add files icon" />
-            </button>
+            </button> -->
           </div>
           <input id="message" name="message"  class="w-full p-4 text-emerald-600 bg-emerald-50 rounded-lg border border-emerald-200 leading-[160%]" placeholder="Write your message" required />
           <div id="error-message" class="text-rose-700 text-xs mt-1 ml-3">
@@ -535,35 +661,35 @@ We are the only educational consultants in the nation offering 100% free admissi
               </div>
               <div class="flex justify-around w-5/6 mt-5">
                 <div>
-                  <a class="" href="#">
+                  <a class="" href="">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">
                       <path class="footer-social-amoeba-path" d="M223.06,43.32c-.77-7.2,1.87-28.47-20-32.53C187.78,8,180.41,18,178.32,20.7s-5.63,10.1-4.07,16.7-.13,15.23-4.06,15.91-8.75-2.9-6.89-7S167.41,36,167.15,33a18.93,18.93,0,0,0-2.64-8.53c-3.44-5.5-8-11.19-19.12-11.19a21.64,21.64,0,0,0-18.31,9.18c-2.08,2.7-5.66,9.6-4.07,16.69s.64,14.32-6.11,13.9S108.35,46.5,112,36.54s-1.89-21.24-4-23.94S96.34,0,85.23,0,57.46,8.84,56.49,24.56s6.92,20.79,7,24.59c.07,2.75-6.43,4.16-12.92,2.38s-4-10.75-3.46-12.38c1.85-6.6-2-14-4.08-16.69a21.62,21.62,0,0,0-18.3-9.18C13.62,13.28,9.06,19,5.62,24.47A18.81,18.81,0,0,0,3,33a21.85,21.85,0,0,0,1.58,9.08,16.58,16.58,0,0,1,1.06,5A6.75,6.75,0,0,1,0,54H236C235.47,54,223.83,50.52,223.06,43.32Z"></path>
                     </svg>
                   </a>
                 </div>
                 <div>
-                  <a class="" href="#">
+                  <a class="" href="https://www.instagram.com/milkomi_education_consultancy?igsh=aW1jenl5YW1uN2dp" target="_blank">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-instagram" viewBox="0 0 16 16">
                       <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                     </svg>
                   </a>
                 </div>
                 <div>
-                  <a class="" href="#">
+                  <a class="" href="#" target="_blank">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-tiktok" viewBox="0 0 16 16">
                       <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
                     </svg>
                   </a>
                 </div>
                 <div>
-                  <a class="" href="#">
+                  <a class="" href="#" target="_blank">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-facebook" viewBox="0 0 16 16">
                       <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                     </svg> 
                   </a>
                 </div>
                 <div>
-                  <a class="" href="#">
+                  <a class="" href="https://t.me/milkomieducationconsultancy" target="_blank">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 496 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg>
                   </a>
                 </div>  
@@ -601,7 +727,7 @@ We are the only educational consultants in the nation offering 100% free admissi
         <div class="footer-copyright bg-emerald-600 py-2">
           <div class="footer-copyright-wrapper">
             <p class="footer-copyright-text">
-              <a class="footer-copyright-link" href="#" target="_self"> ©2024. | Designed By: MINA. | All rights reserved. </a>
+              <a class="footer-copyright-link" target="_blank" href="https://t.me/imran_hm" target="_self"> ©2024. | <a target="_blank" class="cursor-pointer hover:text-cyan-500 transition-colors duration-300">Designed By: MINA TECH.</a> | All rights reserved. </a>
             </p>
           </div>
         </div>
